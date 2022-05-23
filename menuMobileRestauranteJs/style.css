@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-family: 'Merienda';
+    --color-bg: #F26B1D;
+    --color-bg-2: #F2360C;
+    --color-primary: #0D0D0D;
+    --color-secundary: #731810;
+}
+body{
+    background-image: url(food01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 97vh;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    background: #ffffff;
+    box-shadow: 0px 5px 8px #00000030;
+}
+.logo {
+    font-size: 1.7em;
+    font-family: 'Merienda';
+    border-bottom: 2px solid var(--color-bg-2);
+    font-weight: bold;
+    color: var(--color-primary);
+}
+.logo:hover{
+    color: #f26b1dc9;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.menu{
+    display: flex;
+}
+.menu li{
+    list-style: none;
+    padding: 10px;
+}
+
+/*================================*/
+
+/*hover dos links de menu*/
+.nav-links {
+    position: relative;
+}
+.nav-links::after {
+    position: absolute;
+    content: '';
+
+/*estilos de tamanho elemento*/
+    width: 100%; /* O elemento que sera uma linha, terá 100% to tamanho do conteúdo que estiver dentro da tag <a> */
+    height: 2px;
+
+/*posicionamento da elemento*/
+    left: 0;
+    bottom: 0;
+    
+/*cor da linha*/
+    background-color: #F2360C;
+
+    transform: scaleX(0); /*VETOR*/
+    transform-origin: right; /* A origen da linha termina na direita quando REMOVO o mouse*/
+    transition: transform .5s;
+}
+.nav-links:hover::after {
+    transform: scaleX(1); /*VETOR*/
+    transform-origin: left; /* A origen da linha começa na esquertda quando pasar o mouse*/
+}
+
+/*================================*/
+
+a.ativo{
+    color: #F26B1D;
+}
+
+#btn-mobile {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 6px; /*Para almentar a area de clique ou te touch*/
+}
+@media (max-width: 760px){
+    #btn-mobile {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+
+    /*Posicionamento do meno quando estivera tivo*/
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        width: 100%;
+        text-align: center;
+        background: #ffffff;
+        z-index: 1000; /*O z-index de 1000 garante que ele sobreponha qualquer z-index existente na tela que seja inferior a 1000.*/
+
+        height: 0; /*Altura inicial é de 0px e se expande para  calc(60vh - 70px) quando o menu estiver ativo*/
+        overflow-y: hidden; /*Esconde o conteúdo quando o elemento não esta completo*/
+
+    }
+    .nav-menu.active .menu { /*Quando o nav-menu estiver com a class active, ele fala com menu que tenha essa características:  */
+        display: block;
+        height: calc(100vh - 70px); /*Até onde o elemento se expande quando o menu estiver ativo*/
+        overflow-y: auto; /*Cria a rolagem para visualizar o conteúdo quando o elemento nao estiver completo*/
+        
+    }
+    li{
+        margin-top: 30px;
+        font-size: 1.1em;
+    }
+
+/*Criando o menu hamburguer*/
+    #hamburguer{
+       display: block;
+       width: 30px;
+       height: 3px;
+       background: #F2360C;
+       margin: 5px;
+       position: relative;
+       transition: .4s;
+       
+    }
+
+/*Criando o X para fechar o menu*/
+    .nav-menu.active #hamburguer:nth-of-type(2){
+       background: transparent;
+    }
+    .nav-menu.active #hamburguer:nth-of-type(1){
+        transform: rotate(135deg);
+        bottom: -8px;
+    }
+    .nav-menu.active #hamburguer:nth-of-type(3){
+        transform: rotate(-135deg);
+        top: -8px;
+    }
+
+
+    
+    header{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+    }
+
+    .nav-links::after{
+        display: none;
+    }
+}
+
+

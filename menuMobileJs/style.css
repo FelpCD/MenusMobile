@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(26, 26, 65);
+    height: 60px;
+}
+
+a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 10px;  
+}
+
+li{
+    padding: 10px;
+}
+li:hover{
+    background: rgba(255, 72, 0, 0.671);
+}
+
+#logo{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #ff7300;
+    transition: .3s;
+    text-transform: uppercase;
+}
+#logo:hover{
+    opacity: .8;
+}
+
+#menu{
+    display: flex;
+    list-style: none;
+}
+
+#btn-mobile{
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+@media (max-width: 760px){
+    header {
+        justify-content: space-between;
+        padding: 0px 30px;
+    }
+
+    /*Referente a como o menu será exibido*/
+    #menu{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        right: 0px;
+        background-color: rgba(26, 26, 65, 0.726);
+        z-index: 10000; /* Para quando menu se expandir ele sobreponha todos os conteúdos que estejam no site*/
+        transition: .6s;
+        height: 0;
+        visibility: hidden;/* Esconde os elemento quando o menu não esta ativo*/
+        overflow-y: hidden;/*Esconde o conteúdo quando o elemnto não tem o tamanho total no eixo Y, fazendo com que o conteúdo só seja mostrado conforme o elemnto vai se espandindo no eixo Y*/
+    }
+
+    #nav.active #menu{
+        visibility: visible;/* Mostra o elemento queno o menu esta ativo*/
+        height: calc(75vh - 60px);
+        overflow-y: auto;/* Permite que seja incluído varios itens no menu criando a barra de scroll*/
+    }
+    #menu li {
+        padding: 20px;    
+    }
+    
+    #btn-mobile{
+        display: flex;
+    }
+
+    /*Personalização das três linhs do menu*/
+      #burguer{
+        color: #ff7300;
+        border-top: 2px solid;
+        width: 25px;
+    }
+    #burguer::after, #burguer::before{
+        background: currentColor; /* Valor que mantem a mesma cor definida em na class ou id para o ::after e ::before*/
+        content: '';
+        display: block; /* O display block é para que o espan reseba as atribuições de width e height*/
+        width: 25px;
+        height: 2px;
+        margin-top: 6px;
+        transition: .5s;
+        position: relative;
+    }
+    /* Essa linhas de código faz com que o menu sanduiche qundo estiver ativo se trasforme em um X */
+    #nav.active #burguer{
+        border-top-color: transparent;
+    }
+    #nav.active #burguer::before{
+        transform: rotate(135deg);
+    }
+    #nav.active #burguer::after{
+        transform: rotate(-135deg);
+        top: -8px
+    }
+}
+
+/* Imagem de fundo*/
+ main{
+     background-image: url(img.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     height: calc(100vh - 60px);
+ }
+ 
+ 
