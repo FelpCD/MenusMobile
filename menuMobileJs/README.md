@@ -9,7 +9,4 @@
 * Background transparente.
 * Quando ativo exibe um X indicando que pode ser fechado.
 
-### Imagens:
-(https://user-images.githubusercontent.com/102912086/205520205-85e31a2b-6f6c-4636-9391-818c86b86432.jpg)
-(https://user-images.githubusercontent.com/102912086/205520223-ad85062e-80c9-4e65-97b2-aa1573d9fd11.jpg)
 
