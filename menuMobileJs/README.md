@@ -11,6 +11,3 @@
 
 ### Imagens:
 ![Imagem do menu fechado]<close.jpg> ![Imagem do menu aberto]<open.jpg>
-
-### Link do conteúdo:
-<https://felpcd.github.io/#1MenuMobile/> 
