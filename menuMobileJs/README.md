@@ -10,4 +10,6 @@
 * Quando ativo exibe um X indicando que pode ser fechado.
 
 ### Imagens:
-![Imagem do menu fechado]<close.jpg> ![Imagem do menu aberto]<open.jpg>
+![Imagem do menu fechado]<close![close](https://user-images.githubusercontent.com/102912086/205520205-85e31a2b-6f6c-4636-9391-818c86b86432.jpg)
+.jpg> ![Imagem do menu aberto]<open![open](https://user-images.githubusercontent.com/102912086/205520223-ad85062e-80c9-4e65-97b2-aa1573d9fd11.jpg)
+.jpg>
